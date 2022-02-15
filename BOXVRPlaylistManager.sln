@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOXVR Playlist Manager", "B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoxVRPlaylistManagerNETCore", "BoxVRPlaylistManagerNETCore\BoxVRPlaylistManagerNETCore.csproj", "{CDB99F3A-0C5F-4E4B-9A2C-57340389B0B5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpotiSharp", "..\SpotiSharp\SpotiSharp.csproj", "{AFB48153-F9A2-49C2-9BE8-2F1F8EAD058D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpotiSharp", "SpotiSharp\SpotiSharp.csproj", "{AFB48153-F9A2-49C2-9BE8-2F1F8EAD058D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
