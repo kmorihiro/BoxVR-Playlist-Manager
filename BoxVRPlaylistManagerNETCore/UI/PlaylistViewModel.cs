@@ -124,7 +124,7 @@ namespace BoxVRPlaylistManagerNETCore.UI
             dlg.Title = "Add Track";
 
             //Taken from BOXVR source code.
-            dlg.Filter = "MP3 Files (*.mp3)|*.mp3|M4A Files (*.m4a)|*.m4a|OGG Files (*.ogg)|*.ogg";
+            dlg.Filter = "MP3 Files (*.mp3)|*.mp3|M4A Files (*.m4a)|*.m4a|OGG Files (*.ogg)|*.ogg|WAVE Files (*.wav)|*.wav";
             var result = dlg.ShowDialog();
 
             if(result ?? false)
