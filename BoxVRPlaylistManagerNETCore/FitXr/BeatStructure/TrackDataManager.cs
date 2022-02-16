@@ -164,7 +164,7 @@ namespace BoxVRPlaylistManagerNETCore.FitXr.BeatStructure
             }
             else
             {
-                if(!(extension == ".mp3") && !(extension == ".m4a") && !(extension == ".ogg"))
+                if(!(extension == ".mp3") && !(extension == ".m4a") && !(extension == ".ogg") && !(extension == ".flac") && !(extension == ".aac"))
                 {
                     return;
                 }
