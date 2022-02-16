@@ -164,11 +164,6 @@ namespace BoxVRPlaylistManagerNETCore.FitXr.BeatStructure
             }
             else
             {
-                if(!(extension == ".mp3") && !(extension == ".m4a") && !(extension == ".ogg") && !(extension == ".flac") && !(extension == ".aac"))
-                {
-                    return;
-                }
-                
                 TrackId trackId = new TrackId(filePath);
                 string outputPath = Paths.WavDataFolder(locationMode) + trackId.trackId + ".wav";
                 //Convert to WAV
