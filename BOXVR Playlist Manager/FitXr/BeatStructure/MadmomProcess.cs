@@ -16,6 +16,7 @@ namespace BoxVR_Playlist_Manager.FitXr.BeatStructure
         private const bool SHOW_WINDOW = false;
         private string processPath;
         private string outputFileName;
+        private string progressFileName;
 
         private string BinaryPath => Path.Combine(Paths.StreamingAssetsPath, @"DBNDownBeatTracker\DBNDownBeatTracker.exe");
 
@@ -40,12 +41,13 @@ namespace BoxVR_Playlist_Manager.FitXr.BeatStructure
         private void ProcessMadmom(string musicPath, Action successAction)
         {
             outputFileName = Path.GetFileNameWithoutExtension(musicPath) + ".madmom.txt";
-            string resultOutPath = Path.Combine(MadmomProcess.madmonOutputPath, Path.GetFileNameWithoutExtension(musicPath) + ".madmom.txt");
+            progressFileName = Path.GetFileNameWithoutExtension(musicPath) + ".progress.madmom.txt";
+            string resultOutPath = Path.Combine(MadmomProcess.madmonOutputPath, outputFileName);
+            string progressPath = Path.Combine(MadmomProcess.madmonOutputPath, progressFileName);
             string ffmpegPath = Path.GetDirectoryName(FFmpegQueue.binaryPath);
             string arguments = this.CreateCommandArgs(musicPath, resultOutPath);
-            string path = MadmomProcess.madmonOutputPath + this.outputFileName;
             File.Delete(resultOutPath);
-            File.Delete(path);
+            File.Delete(progressPath);
             bool isProcessComplete = false;
             App.logger.Debug(arguments);
             Process process = (Process)null;
@@ -60,7 +62,7 @@ namespace BoxVR_Playlist_Manager.FitXr.BeatStructure
           EnvironmentVariables = {
             {
               "PROGRESS_PATH",
-              MadmomProcess.madmonOutputPath + this.outputFileName
+              progressPath
             }
           }
         }
@@ -95,6 +97,7 @@ namespace BoxVR_Playlist_Manager.FitXr.BeatStructure
                 successAction.Invoke();
             }
             File.Delete(resultOutPath);
+            File.Delete(progressPath);
         }
     }
 }
